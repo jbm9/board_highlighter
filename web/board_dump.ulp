@@ -1,0 +1,22 @@
+int main() {
+
+  if (board)
+    board(B) {
+      string outfile = filesetext(B.name, ".dmp");
+
+      output(outfile) {
+	printf("board %d %d %d %d\n", B.area.x1, B.area.y1, B.area.x2, B.area.y2);
+
+	B.wires(W) {
+	  printf("wire %d %d %d %d %d\n", W.layer, W.x1, W.y1, W.x2, W.y2);
+	}
+	B.elements(E) {
+	  printf("element %s %d %d %d %d %s\n", E.name, 
+		 E.package.area.x1, E.package.area.y1, E.package.area.x2, E.package.area.y2,
+		 E.value);
+	}
+      }
+    }
+
+  return 0;
+}
