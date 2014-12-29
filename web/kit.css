@@ -1,0 +1,98 @@
+body { 
+  font-family: Helvetica, FreeSans, Arial, Sans, sans-serif;
+  font-size: 11pt;
+  background-image: url("ghyka_plates_5_and_6.gif"); 
+  line-height: 120%;
+
+}
+
+p,h1,h2,h3,h4,table,ul,ol,div,li,form { 
+  margin-left: 50px;
+}
+
+
+p,table,ul,ol,div,li,form { 
+  width: 48em;
+  text-align: justify;
+}
+
+p.text { 
+/*  float: right;
+  clear: both;*/
+  margin-left: 50px;
+  width: 650px;
+}
+
+div.tocheck { 
+  margin-left: 75px;
+  width: 500px;
+  background: #eee;
+  border: 1px solid black;
+  padding: 1ex;
+}
+
+div.tocheck p, div.tocheck ul { 
+  width: 470px;
+  margin-left: 10px;
+}
+
+div.tocheck li { 
+  margin-left: 0px;
+  width: 440px;
+  margin-top: 1ex;
+  text-indent: -20px;
+}
+
+
+li { 
+  width: 40em;
+}
+
+h1,h2,h3,h4 { 
+  margin-left: 60px;
+  text-align: right;
+  width: 700px;
+}
+
+body { 
+
+}
+
+div.sidebar { 
+  width: 200px;
+  height: 100%;
+}
+
+a.partref { 
+  color: black;
+  text-decoration: none;
+}
+
+a.partref:hover { 
+  color: orange;
+  text-decoration: none;
+}
+
+
+div.inset { 
+  float: left;
+  font-size: small;
+  width: 300px;
+  margin-right: 1em;
+  border: 1px solid #cccccc;
+  padding: 3px;
+  background-color: #ddd;
+  margin-top: 2ex;
+  margin-bottom: 0.5em;
+  clear: all;
+}
+
+div.inset p {
+  width: 275px;
+  margin: 0;
+  text-align: center;
+}
+
+div.inset + p { 
+  width: 48em;
+}
