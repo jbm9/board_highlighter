@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Board Highlighter</title>
+<link rel="stylesheet" type="text/css" href="project.css" />
+
+</head>
+
+<body>
+<div class="b">
+
+
+<h1>Board Highlighter</h1>
+
+<p>This is a few simple utilities to automate the creation of electronic
+kit assembly instructions, with automatic highlighting of the
+components to use.</p>
+
+<p>It requires numpy, scipy, and skimage to be installed to work.
+This is kind of a bit much, but they're stuff I always have installed
+and make the code much easier to knock out.</p>
+
+<h2>Rough steps</h2>
+<ul>
+<li>Run the ULP in EAGLE to get the board dump file. ("foo.dmp")</li>
+<li>Save off a PNG of your board from EAGLE (File/Export) ("foo.png") </li>
+<li>Run code/gen_steps.py foo.dmp > foo.json </li>
+<li>Edit foo.json </li>
+<ul>
+    <li> Reorder steps as needed</li>
+    <li> Add instructions in the "text" section </li>
+    <li> Add a "tocheck": "Text for things to check" where needed
+         (this is JSON, so mind your commas) </li>
+    <li> Save and write out </li>
+  </ul>
+<li> Edit the web/steps.html.header and web/steps.html.footer as needed </li>
+<li> Now run board_mask.py foo </li>
+  <ul>
+  <li> Click at your board's (0,0) when prompted to, to calibrate your image </li>
+  <li> You can click multiple times to get an "average" of your point </li>
+  <li> Close the window that pops up after you've clicked </li>
+  <li> Repeat for the upper right corner of your board </li>
+    </ul>
+<li> You should have a bunch of images and foo_steps_base.html in your directory now </li>
+<li> Touch up as needed and publish </li>
+</ul>
+
+
+<h2>Contents</h2>
+<ul>
+<li>web/ -- The basic templates for the HTML page which is output</li>
+<li>code/ -- The python code to generate the webpages</li>
+<li>ulp/ -- the EAGLE ULP script to dump the board components</li>
+</ul>
+
+<h2>Downloading</h2>
+
+<p>You can obtain the full repo of code by git clone of <a
+ href="./board_highlighter.git/">this URL (right-click and copy, then
+git clone)</a>.  It's also available at <a
+ href="https://github.com/jbm9/board_highlighter">github:jbm9/board_highlighter</a>.
+This is an <a
+ href="http://www.joshisanerd.com/projects/undertaker/">undertaker</a>
+project; see the <a
+ href="http://www.joshisanerd.com/projects/undertaker/">Undertaker
+homepage</a> for more details on how to best work with the "gitball"
+contained in the repo. </p>
+
+<h2>Author</h2>
+<p>Copyright &copy; 2013-2015 <a href="http://www.joshisanerd.com/">Josh Myer</a>.  Released under the GPL v2.</p>
+
+</div>
+</body>
+</html>
