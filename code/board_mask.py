@@ -30,17 +30,13 @@ class BoardMasker:
         self.print_html_header()
 
     def print_html_header(self):
-        f = file("steps.html.header")
+        f = file("../web/steps.html.header")
         self.htmlfile.write(f.read())
         f.close()
 
 
     def print_html_footer(self):
-        f = file("sidebar.html")
-        self.htmlfile.write(f.read())
-        f.close()
-
-        f = file("steps.html.footer")
+        f = file("../web/steps.html.footer")
         self.htmlfile.write(f.read())
         f.close()
 
@@ -82,7 +78,7 @@ class BoardMasker:
 
             
         for pt in bm.board.get_cal_points():
-            print "Please click on the corner of your board at %s" % pt
+            print "Please click on the corner of your board at %s a few times, then close the window" % pt
             fig = plt.figure()
             ax = fig.add_subplot(111)
             cid = fig.canvas.mpl_connect('button_press_event', onclick)
