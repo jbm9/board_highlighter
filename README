@@ -1,9 +1,37 @@
-.skel
-=====
+board_highlighter
+=================
 
-This is a skeleton project.  It needs better documentation.
+This is a few simple utilities to automate the creation of electronic
+kit assembly instructions, with automatic highlighting of the
+components to use.
+
+It requires numpy, scipy, and skimage to be installed to work.
+
+Rough steps:
+------------
+
+* Run the ULP in EAGLE to get the board dump file. ("foo.dmp")
+* Save off a PNG of your board from EAGLE (File/Export) ("foo.png")
+* Run code/gen_steps.py foo.dmp > foo.json
+* Edit foo.json:
+    * Reorder steps as needed
+    * Add instructions in the "text" section
+    * Add a "tocheck": "Text for things to check" where needed
+         (this is JSON, so mind your commas)
+    * Save and write out
+* Edit the web/steps.html.header and web/steps.html.footer as needed
+* Now run board_mask.py foo
+  * Click at your board's (0,0) when prompted to, to calibrate your image
+  * You can click multiple times to get an "average" of your point
+  * Close the window that pops up after you've clicked
+  * Repeat for the upper right corner of your board
+* You should have a bunch of images and foo_steps_base.html in your directory now
+* Touch up as needed and publish
+
+
 
 Contents:
 
-web/ -- An empty website for this thing
-code/ -- An empty directory for code for this thing
+web/ -- The basic templates for the HTML page which is output
+code/ -- The python code to generate the webpages
+ulp/ -- the EAGLE ULP script to dump the board components
